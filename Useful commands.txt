@@ -1,0 +1,6 @@
+Create and switch branch
+git checkout -b <name>
+
+
+Revert changes - las commit 
+git checkout -- .
