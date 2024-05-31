@@ -4,3 +4,24 @@ git checkout -b <name>
 
 Revert changes - las commit 
 git checkout -- .
+
+
+
+
+
+/*
+	Resources
+*/
+- Pub.dev
+animate_do
+go_router
+provider
+
+Get vertical videos
+https://www.pexels.com/search/videos/vertical/
+
+
+https://m3.material.io/develop/flutterquiqui
+
+Convert JSON into code
+https://quicktype.io/
