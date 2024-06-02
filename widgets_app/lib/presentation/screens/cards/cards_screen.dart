@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 const cards = <Map<String, dynamic>>[
   {
@@ -161,7 +160,7 @@ class _CardType3 extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
     return Card(
-      color: colors.surfaceVariant,
+      color: colors.surfaceContainerHighest,
       elevation: elevation,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
@@ -192,7 +191,7 @@ class _CardType4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
+    // final colors = Theme.of(context).colorScheme;
     return Card(
       clipBehavior: Clip.hardEdge,
       elevation: elevation,
