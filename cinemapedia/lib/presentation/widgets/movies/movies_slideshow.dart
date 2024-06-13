@@ -13,10 +13,10 @@ class MoviesSlideshow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    final double height = MediaQuery.of(context).size.height;
+    // final double height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height / 3,
-      // height: 210,
+      // height: height / 4,
+      height: 210,
       width: double.infinity,
       child: Swiper(
         viewportFraction: 0.8,
