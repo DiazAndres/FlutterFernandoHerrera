@@ -25,3 +25,19 @@ https://m3.material.io/develop/flutterquiqui
 
 Convert JSON into code
 https://quicktype.io/
+
+
+
+
+
+
+
+
+/*		Riverpod		*/
+
+// Provider de solo lectura, no se puede cambiar su estado desde un botón
+final simpleNameProvider = Provider.autoDispose<String>((ref) {
+  return RandomGenerator.getRandomName();
+});
+
+*autoDispose - Cuando se cierra la pantalla, se limpia el provider
