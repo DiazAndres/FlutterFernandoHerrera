@@ -7,7 +7,11 @@ class MovieMasonry extends StatefulWidget {
   final List<Movie> movies;
   final VoidCallback? loadNextPage;
 
-  const MovieMasonry({super.key, required this.movies, this.loadNextPage});
+  const MovieMasonry({
+    super.key,
+    required this.movies,
+    this.loadNextPage,
+  });
 
   @override
   State<MovieMasonry> createState() => _MovieMasonryState();
@@ -16,7 +20,6 @@ class MovieMasonry extends StatefulWidget {
 class _MovieMasonryState extends State<MovieMasonry> {
   final scrollController = ScrollController();
 
-  //todo: initState
   @override
   void initState() {
     super.initState();
@@ -32,7 +35,6 @@ class _MovieMasonryState extends State<MovieMasonry> {
     );
   }
 
-  //todo: dispose
   @override
   void dispose() {
     scrollController.dispose();
@@ -54,7 +56,7 @@ class _MovieMasonryState extends State<MovieMasonry> {
             return Column(
               children: [
                 const SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 MoviePosterLink(movie: widget.movies[index]),
               ],

@@ -1,3 +1,4 @@
+export 'actors/actors_by_movie.dart';
 export 'movies/movie_horizontal_listview.dart';
 export 'movies/movies_slideshow.dart';
 export 'package:cinemapedia/presentation/widgets/shared/full_screen_loader.dart';

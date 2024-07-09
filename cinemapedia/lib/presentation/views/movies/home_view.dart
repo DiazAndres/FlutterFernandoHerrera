@@ -11,7 +11,8 @@ class HomeView extends ConsumerStatefulWidget {
   HomeViewState createState() => HomeViewState();
 }
 
-class HomeViewState extends ConsumerState<HomeView> {
+class HomeViewState extends ConsumerState<HomeView>
+    with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     super.initState();
@@ -23,13 +24,14 @@ class HomeViewState extends ConsumerState<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     final initialLoading = ref.watch(initialLoadingProvider);
 
     if (initialLoading) return const FullScreenLoader();
 
     final moviesSlideshow = ref.watch(moviesSlideshowProvider);
     final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
-    final popularMovies = ref.watch(popularMoviesProvider);
     final upcomingMovies = ref.watch(upcomingMoviesProvider);
     final topRatedMovies = ref.watch(topRatedMoviesProvider);
 
@@ -37,12 +39,12 @@ class HomeViewState extends ConsumerState<HomeView> {
       slivers: [
         const SliverAppBar(
           floating: true,
-          elevation: 1,
-          title: CustomAppbar(),
-          // flexibleSpace: FlexibleSpaceBar(
-          //   titlePadding: EdgeInsets.all(0),
-          //   title: CustomAppbar(),
-          // ),
+          // elevation: 1,
+          // title: CustomAppbar(),
+          flexibleSpace: FlexibleSpaceBar(
+            titlePadding: EdgeInsets.all(0),
+            title: CustomAppbar(),
+          ),
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate((context, index) {
@@ -67,13 +69,14 @@ class HomeViewState extends ConsumerState<HomeView> {
                   loadNextPage: () =>
                       ref.read(upcomingMoviesProvider.notifier).loadNextPage(),
                 ),
-                MovieHorizontalListview(
-                  movies: popularMovies,
-                  title: 'Populares',
-                  // subTitle: 'En este mes',
-                  loadNextPage: () =>
-                      ref.read(popularMoviesProvider.notifier).loadNextPage(),
-                ),
+                // * Ya no esta aquí es parte del menú inferior (PageView)
+                // MovieHorizontalListview(
+                //   movies: popularMovies,
+                //   title: 'Populares',
+                //   // subTitle: 'En este mes',
+                //   loadNextPage: () =>
+                //       ref.read(popularMoviesProvider.notifier).loadNextPage(),
+                // ),
                 MovieHorizontalListview(
                   movies: topRatedMovies,
                   title: 'Mejor calificadas',
@@ -91,4 +94,7 @@ class HomeViewState extends ConsumerState<HomeView> {
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
