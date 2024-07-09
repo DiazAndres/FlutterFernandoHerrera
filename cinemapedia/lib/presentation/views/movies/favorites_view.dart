@@ -2,6 +2,7 @@ import 'package:cinemapedia/presentation/providers/providers.dart';
 import 'package:cinemapedia/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class FavoritesView extends ConsumerStatefulWidget {
   const FavoritesView({super.key});
@@ -63,7 +64,13 @@ class FavoritesViewState extends ConsumerState<FavoritesView> {
             ),
             const SizedBox(
               height: 20,
-            )
+            ),
+            FilledButton.tonal(
+              onPressed: () => context.go('/home/0'),
+              child: const Text(
+                'Empieza a buscar',
+              ),
+            ),
           ],
         ),
       );
