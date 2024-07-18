@@ -10,7 +10,16 @@ class AppTheme {
       listTileTheme: const ListTileThemeData(
         iconColor: seedColor,
       ),
-      brightness: Brightness.dark,
+      // brightness: Brightness.dark,
     );
+  }
+}
+
+class _RegisterForm extends StatelessWidget {
+  const _RegisterForm();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
