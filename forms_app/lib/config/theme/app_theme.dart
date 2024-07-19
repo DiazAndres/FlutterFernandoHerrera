@@ -14,12 +14,3 @@ class AppTheme {
     );
   }
 }
-
-class _RegisterForm extends StatelessWidget {
-  const _RegisterForm();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
