@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EducationHomeScreen extends StatefulWidget {
   // const EducationHomeScreen({super.key});
@@ -62,10 +63,18 @@ class _EducationHomeScreenState extends State<EducationHomeScreen> {
     ),
   ];
 
+  List imgList = [
+    'Flutter',
+    'React Native',
+    'Python',
+    'C#',
+  ];
+
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
     final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: ListView(
@@ -120,7 +129,7 @@ class _EducationHomeScreenState extends State<EducationHomeScreen> {
                 Container(
                   margin: const EdgeInsets.only(top: 5, bottom: 20),
                   width: width,
-                  height: 55,
+                  height: 45,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -162,8 +171,8 @@ class _EducationHomeScreenState extends State<EducationHomeScreen> {
                     return Column(
                       children: [
                         Container(
-                          height: 60,
-                          width: 60,
+                          height: height * 0.09,
+                          // width: width * 0.1,
                           decoration: BoxDecoration(
                               color: catColors[index], shape: BoxShape.circle),
                           child: Center(
@@ -184,9 +193,108 @@ class _EducationHomeScreenState extends State<EducationHomeScreen> {
                     );
                   },
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Courses',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      'See All',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: colors.primary),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                GridView.builder(
+                  itemCount: imgList.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: (height - 50 - 25) / (4 * 240),
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                  ),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        context.push('/education-course/${imgList[index]}');
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 20, horizontal: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color(0xFFF5F3FF)),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Image.asset(
+                                'assets/img/${imgList[index]}.png',
+                                width: width * 0.15,
+                                height: height * 0.15,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              imgList[index],
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              '55 videos',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black.withOpacity(0.5),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
               ],
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 32,
+        selectedItemColor: colors.primary,
+        selectedFontSize: 18,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.assignment), label: 'Courses'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), label: 'WishList'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
       ),
     );
