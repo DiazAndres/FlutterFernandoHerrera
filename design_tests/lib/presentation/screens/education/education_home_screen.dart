@@ -221,7 +221,7 @@ class _EducationHomeScreenState extends State<EducationHomeScreen> {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: (height - 50 - 25) / (4 * 240),
+                    childAspectRatio: (height - 50 - 25) / (4 * 290),
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
                   ),
@@ -232,7 +232,7 @@ class _EducationHomeScreenState extends State<EducationHomeScreen> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 10),
+                            vertical: 10, horizontal: 10),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: const Color(0xFFF5F3FF)),

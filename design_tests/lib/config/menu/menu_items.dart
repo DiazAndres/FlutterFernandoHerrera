@@ -22,10 +22,10 @@ const appMenuItems = <MenuItem>[
     icon: Icons.school_rounded,
   ),
   MenuItem(
-    title: 'Botones',
-    subTitle: 'Varios Botones en Flutter',
-    link: '/buttons',
-    icon: Icons.smart_button_outlined,
+    title: 'Ecommerce Shopping',
+    subTitle: 'Design Dear Programmer',
+    link: '/ecommerce-splash',
+    icon: Icons.store,
   ),
   MenuItem(
     title: 'Tarjetas',

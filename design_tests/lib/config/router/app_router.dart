@@ -1,3 +1,6 @@
+import 'package:design_tests/presentation/screens/ecommerce/ecommerce_home_screen.dart';
+import 'package:design_tests/presentation/screens/ecommerce/ecommerce_onboarding_screen.dart';
+import 'package:design_tests/presentation/screens/ecommerce/ecommerce_splash_screen.dart';
 import 'package:design_tests/presentation/screens/education/education_course_screen.dart';
 import 'package:design_tests/presentation/screens/education/education_home_screen.dart';
 import 'package:design_tests/presentation/screens/education/education_welcome_screen.dart';
@@ -32,6 +35,21 @@ final appRouter = GoRouter(
           imgCourse: imgCourse,
         );
       },
+    ),
+    GoRoute(
+      path: '/ecommerce-splash',
+      name: EcommerceSplashScreen.name,
+      builder: (context, state) => const EcommerceSplashScreen(),
+    ),
+    GoRoute(
+      path: '/ecommerce-home',
+      name: EcommerceHomeScreen.name,
+      builder: (context, state) => const EcommerceHomeScreen(),
+    ),
+    GoRoute(
+      path: '/ecommerce-onboarding',
+      name: EcommerceOnboardingScreen.name,
+      builder: (context, state) => EcommerceOnboardingScreen(),
     ),
   ],
 );
