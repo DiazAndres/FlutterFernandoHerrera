@@ -24,7 +24,7 @@ const appMenuItems = <MenuItem>[
   MenuItem(
     title: 'Ecommerce Shopping',
     subTitle: 'Design Dear Programmer',
-    link: '/ecommerce-splash',
+    link: '/ecommerce-login',
     icon: Icons.store,
   ),
   MenuItem(
