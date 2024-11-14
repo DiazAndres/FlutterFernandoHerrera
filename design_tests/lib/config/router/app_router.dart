@@ -1,4 +1,5 @@
 import 'package:design_tests/presentation/screens/ecommerce/ecommerce_home_screen.dart';
+import 'package:design_tests/presentation/screens/ecommerce/ecommerce_login_screen.dart';
 import 'package:design_tests/presentation/screens/ecommerce/ecommerce_onboarding_screen.dart';
 import 'package:design_tests/presentation/screens/ecommerce/ecommerce_splash_screen.dart';
 import 'package:design_tests/presentation/screens/education/education_course_screen.dart';
@@ -50,6 +51,11 @@ final appRouter = GoRouter(
       path: '/ecommerce-onboarding',
       name: EcommerceOnboardingScreen.name,
       builder: (context, state) => EcommerceOnboardingScreen(),
+    ),
+    GoRoute(
+      path: '/ecommerce-login',
+      name: EcommerceLoginScreen.name,
+      builder: (context, state) => const EcommerceLoginScreen(),
     ),
   ],
 );

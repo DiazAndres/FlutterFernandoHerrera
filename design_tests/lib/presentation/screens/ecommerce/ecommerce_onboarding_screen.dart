@@ -56,7 +56,7 @@ class EcommerceOnboardingScreen extends StatelessWidget {
           footer: Padding(
             padding: const EdgeInsets.only(left: 15, right: 15, bottom: 50),
             child: ElevatedButton(
-              onPressed: () => context.push('/ecommerce-home'),
+              onPressed: () => context.push('/ecommerce-login'),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size.fromHeight(55),
                 backgroundColor: const Color(0xFFEF6969),
