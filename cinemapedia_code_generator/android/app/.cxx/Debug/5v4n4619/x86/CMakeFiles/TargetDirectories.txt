@@ -1,0 +1,2 @@
+C:/Users/adiaz/Documents/Flutter/FlutterFernandoHerrera/cinemapedia_code_generator/android/app/.cxx/Debug/5v4n4619/x86/CMakeFiles/edit_cache.dir
+C:/Users/adiaz/Documents/Flutter/FlutterFernandoHerrera/cinemapedia_code_generator/android/app/.cxx/Debug/5v4n4619/x86/CMakeFiles/rebuild_cache.dir

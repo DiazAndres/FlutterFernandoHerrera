@@ -1,0 +1,19 @@
+Flutter Utilidades importantes
+go_router - manejador de rutas
+animate_do - animaciones 
+
+Gestores de estado
+riverpod
+bloc 
+
+equatable para gestionar estados de forma eficiente si son iguales
+formz - para manejar de mejor forma los inputs de los formularios
+
+dio - para peticiones http
+
+
+
+Notificaciones push con FCM
+firebase_messaging
+
+
